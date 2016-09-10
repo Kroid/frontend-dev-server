@@ -1,0 +1,34 @@
+{
+  "name": "frontend-dev-server",
+  "version": "0.0.1",
+  "description": "dev webserver for frontend works",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kroid/frontend-dev-server"
+  },
+  "author": "George M Kroid <kroid@yandex.ru>",
+  "license": "ISC",
+  "keywords": [
+    "frontent",
+    "serve",
+    "server",
+    "webserver",
+    "compile",
+    "proxy",
+    "jade",
+    "pug",
+    "sass",
+    "scss"
+  ],
+  "dependencies": {
+    "connect": "^3.5.0",
+    "http-proxy": "^1.14.0",
+    "node-sass": "^3.9.3",
+    "pug": "^2.0.0-beta6",
+    "serve-static": "^1.11.1"
+  }
+}
