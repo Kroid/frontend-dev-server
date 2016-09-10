@@ -1,6 +1,6 @@
 {
   "name": "frontend-dev-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "dev webserver for frontend works",
   "main": "index.js",
   "scripts": {

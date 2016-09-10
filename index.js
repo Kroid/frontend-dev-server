@@ -15,6 +15,7 @@ const scss = require('./middlewares/scss');
 //    '/api': 'http://servername.com',
 //    '/media': 'https://files.servername.com'
 // }
+// middlewares: Array
 class Server {
   constructor(options) {
     options = options || {};
@@ -23,6 +24,7 @@ class Server {
     this.config = {};
     this.config.port = options.port || 3001;
     this.config.root = options.root || '.';
+    this.config.middlewares = options.middlewares || [];
 
     if (typeof this.config.root === 'string') {
       this.config.root = [this.config.root];
@@ -32,6 +34,10 @@ class Server {
       this.app.use(proxy(options.proxy))
     }
 
+    this.config.middlewares.map(function(middleware) {
+      self.app.use(middleware);
+    });
+
     this.app.use(pug(this.config.root));
     this.app.use(scss(this.config.root));
 
@@ -39,10 +45,6 @@ class Server {
       self.app.use(serveStatic(root));
     });
 
-  }
-
-  use(middleware) {
-    this.app.use(middleware);
   }
 
   start(port) {
